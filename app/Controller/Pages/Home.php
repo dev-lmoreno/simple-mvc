@@ -16,14 +16,11 @@ class Home extends Page{
         $company = new Company;
         // VIEW DA HOME
         $content =  View::render('pages/home',[
-            'name' => $company->name,
-            'description' => $company->description,
-            'site' => $company->site
+            'name' => $company->name
         ]);
 
-
         // RETORNA A VIEW DA PÁGINA
-        return parent::getPage('Devlmoreno - Home', $content);
+        return parent::getPage('HOME > DEVLMORENO', $content);
     }
 
 }
