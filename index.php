@@ -5,7 +5,12 @@ require __DIR__ . '/vendor/autoload.php';
 use \App\Http\Router;
 use \App\Utils\View;
 
-define('URL', 'http://localhost:8000');
+// CARREGA VARIÁVEIS DE AMBIENTE
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->safeLoad();
+
+// DEFINE A CONSTANTE DA URL
+define('URL', getenv('URL'));
 
 // DEFINE O VALOR PADRÃO DAS VARIÁVEIS
 View::init([

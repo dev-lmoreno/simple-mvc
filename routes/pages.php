@@ -17,9 +17,15 @@ $objRouter->get('/sobre', [
     }
 ]);
 
-// ROTA DINÂMICA
-$objRouter->get('/pagina/{pageId}/{action}', [
-    function($pageId, $action) { // função anônima
-        return new Response(200, 'Página ' . $pageId . ' - ' . $action);
+// ROTA DEPOIMENTOS
+$objRouter->get('/depoimentos', [
+    function() { // função anônima
+        return new Response(200, Pages\Testimony::getTestimonies());
+    }
+]);
+
+$objRouter->post('/depoimentos', [
+    function($request) { // função anônima
+        return new Response(200, Pages\Testimony::getTestimonies());
     }
 ]);
